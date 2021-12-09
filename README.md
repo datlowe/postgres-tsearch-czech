@@ -1,8 +1,10 @@
 ## About
 
-`jtjeferreira/docker-pgq` docker with Czech full-text search dictionaries pulled from https://postgres.cz/data/czech.tar.gz and Czech snowball stemmer from https://github.com/datlowe/postgres_snowball_czech .
+The official `postgres` docker with Czech full-text search dictionaries pulled from https://postgres.cz/data/czech.tar.gz.
 
 ## Supported tags
+
+* `11.6` Based on `postgres:11.6`
 
 * `9.6`
      * Based on `dedekj/docker-pgq:9.6`.

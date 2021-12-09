@@ -1,10 +1,10 @@
-FROM dedekj/docker-pgq:9.6
+FROM postgres:11.6
 
 MAINTAINER Jan Dedek <jan.dedek@datlowe.cz>
 
 RUN apt-get update && apt-get install -y curl
 
-RUN curl -L http://postgres.cz/data/czech.tar.gz \
+RUN curl -L https://postgres.cz/data/czech.tar.gz \
   | tar -xzC /tmp/ \
   && mv /tmp/fulltext_dicts/czech.* /usr/share/postgresql/$PG_MAJOR/tsearch_data/ \
   && rm -rf /tmp/fulltext_dicts/ 
