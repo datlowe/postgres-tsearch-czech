@@ -16,6 +16,6 @@ ADD add-tsearch-czech.sh docker-entrypoint-initdb.d/
 
 
 #RUM
-ADD RUM/lib/ /usr/lib/postgresql/$PG_MAJOR/lib/ 
+ADD RUM_1.3/lib/ /usr/lib/postgresql/$PG_MAJOR/lib/
 
-ADD RUM/extension/ /usr/share/postgresql/$PG_MAJOR/extension
+ADD RUM_1.3/extension/ /usr/share/postgresql/$PG_MAJOR/extension
