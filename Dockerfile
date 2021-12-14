@@ -4,8 +4,9 @@ MAINTAINER Jan Dedek <jan.dedek@datlowe.cz>
 
 RUN apt-get update && apt-get install -y curl
 
-RUN curl -L https://postgres.cz/data/czech.tar.gz \
-  | tar -xzC /tmp/ \
+RUN mkdir /tmp/fulltext_dicts \
+  && curl -L http://postgresql.ok.cz/download/tsearch2cz.tar.gz \
+     | tar -xzC /tmp/fulltext_dicts \
   && mv /tmp/fulltext_dicts/czech.* /usr/share/postgresql/$PG_MAJOR/tsearch_data/ \
   && rm -rf /tmp/fulltext_dicts/ 
 
