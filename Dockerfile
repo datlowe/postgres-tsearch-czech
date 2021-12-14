@@ -9,11 +9,11 @@ RUN mkdir /tmp/fulltext_dicts \
      | tar -xzC /tmp/fulltext_dicts \
 #  && mv /tmp/fulltext_dicts/czech.* /usr/share/postgresql/$PG_MAJOR/tsearch_data/ \
   && iconv --from-code=ISO88592 --to-code=UTF-8 /tmp/fulltext_dicts/czech.dict -o /usr/share/postgresql/$PG_MAJOR/tsearch_data/czech.dict \
-  && iconv --from-code=ISO88592 --to-code=UTF-8 /tmp/fulltext_dicts/czech.aff -o /usr/share/postgresql/$PG_MAJOR/tsearch_data/czech.affix \
-  && iconv --from-code=ISO88592 --to-code=UTF-8 /tmp/fulltext_dicts/czech.stop -o /usr/share/postgresql/$PG_MAJOR/tsearch_data/czech.stop \
+#  && iconv --from-code=ISO88592 --to-code=UTF-8 /tmp/fulltext_dicts/czech.aff -o /usr/share/postgresql/$PG_MAJOR/tsearch_data/czech.affix \
+#  && iconv --from-code=ISO88592 --to-code=UTF-8 /tmp/fulltext_dicts/czech.stop -o /usr/share/postgresql/$PG_MAJOR/tsearch_data/czech.stop \
   && rm -rf /tmp/fulltext_dicts/ 
 
-ADD czech.stop /usr/share/postgresql/$PG_MAJOR/tsearch_data/
+ADD czech.stop czech.affix /usr/share/postgresql/$PG_MAJOR/tsearch_data/
 
 #snowball
 ADD dict_snowball.so /usr/lib/postgresql/$PG_MAJOR/lib/
