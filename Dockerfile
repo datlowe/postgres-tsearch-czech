@@ -1,4 +1,4 @@
-FROM postgres:11.6
+FROM postgres:14
 
 MAINTAINER Jan Dedek <jan.dedek@datlowe.cz>
 
@@ -10,6 +10,8 @@ RUN curl -L https://postgres.cz/data/czech.tar.gz \
   && rm -rf /tmp/fulltext_dicts/ 
 
 ADD czech.stop /usr/share/postgresql/$PG_MAJOR/tsearch_data/
+
+#snowball
 ADD dict_snowball.so /usr/lib/postgresql/$PG_MAJOR/lib/
 
 ADD add-tsearch-czech.sh docker-entrypoint-initdb.d/
