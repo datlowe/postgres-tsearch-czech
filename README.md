@@ -4,6 +4,8 @@ The official `postgres` docker with Czech full-text search dictionaries pulled f
 
 ## Supported tags
 
+* `14.1` Based on `postgres:14.1`
+
 * `11.6` Based on `postgres:11.6`
 
 * `9.6`
